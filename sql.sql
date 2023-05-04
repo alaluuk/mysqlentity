@@ -1,4 +1,10 @@
-﻿CREATE TABLE user (
+﻿CREATE DATABASE netdb;
+CREATE USER 'netuser'@'localhost' IDENTIFIED BY 'netpass';
+GRANT ALL on netdb.* to 'netuser'@'localhost';
+
+USE netdb;
+
+CREATE TABLE user (
   id int primary key NOT NULL AUTO_INCREMENT,
   username varchar(45) DEFAULT NULL,
   password varchar(255) DEFAULT NULL,
