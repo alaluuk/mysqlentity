@@ -1,8 +1,8 @@
-﻿CREATE DATABASE netdb;
+﻿CREATE DATABASE entitydb;
 CREATE USER 'netuser'@'localhost' IDENTIFIED BY 'netpass';
-GRANT ALL on netdb.* to 'netuser'@'localhost';
+GRANT ALL on entitydb.* to 'netuser'@'localhost';
 
-USE netdb;
+USE entitydb;
 
 CREATE TABLE user (
   id int primary key NOT NULL AUTO_INCREMENT,

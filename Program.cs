@@ -28,7 +28,7 @@ if (app.Environment.IsDevelopment())
 if (app.Environment.IsDevelopment()){
 app.Use(async (contex, next)=>
 {
-    System.Environment.SetEnvironmentVariable("DATABASE_URL", "server=127.0.0.1;user id=netuser;password=netpass;port=3306;database=netdb;");
+    System.Environment.SetEnvironmentVariable("DATABASE_URL", "server=127.0.0.1;user id=netuser;password=netpass;port=3306;database=entitydb;");
 
     Console.WriteLine(System.Environment.GetEnvironmentVariable("DATABASE_URL"));
     await next();

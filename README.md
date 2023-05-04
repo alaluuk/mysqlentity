@@ -41,7 +41,7 @@ And also these
 if (app.Environment.IsDevelopment()){
 app.Use(async (contex, next)=>
 {
-    System.Environment.SetEnvironmentVariable("DATABASE_URL", "server=127.0.0.1;user id=netuser;password=netpass;port=3306;database=netdb;");
+    System.Environment.SetEnvironmentVariable("DATABASE_URL", "server=127.0.0.1;user id=netuser;password=netpass;port=3306;database=entitydb;");
 
     Console.WriteLine(System.Environment.GetEnvironmentVariable("DATABASE_URL"));
     await next();
@@ -54,11 +54,11 @@ app.Use(async (contex, next)=>
 
 The database is created with below codes
 <pre>
-CREATE DATABASE netdb;
+CREATE DATABASE entitydb;
 CREATE USER 'netuser'@'localhost' IDENTIFIED BY 'netpass';
-GRANT ALL on netdb.* to 'netuser'@'localhost';
+GRANT ALL on entitydb.* to 'netuser'@'localhost';
 
-USE netdb;
+USE entitydb;
 
 CREATE TABLE user (
   id int primary key NOT NULL AUTO_INCREMENT,
